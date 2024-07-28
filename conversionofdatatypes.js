@@ -1,0 +1,12 @@
+let score='123';
+console.log(typeof score);
+let valueInNumber=Number(score);
+console.log(typeof(valueInNumber));
+console.log(valueInNumber);
+let someNumber=133;
+let InString=String(someNumber);
+// console.log(typeof InString);
+// console.log(someNumber);
+let str1="barkat";
+let str2=" wazir";
+console.log(str1 + str2);
