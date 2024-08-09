@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+  <ul class="language">
+    <li>JavaScript
+
+    </li>
+  </ul>
+  <script>
+    function AddLang(lang){
+    let newLi=document.createElement('li');
+    newLi.innerText=`${lang}`
+    document.querySelector('.language').appendChild(newLi);
+    }
+    AddLang("python");
+    AddLang("C++");
+    function addOptimzize(langName)
+    {
+      let li=document.createElement('li')
+      li.appendChild(document.createTextNode(langName))
+      document.querySelector('.language').appendChild(li)
+    }
+    addOptimzize('golange');
+    // edit 
+    let SecondLang=document.querySelector("li:nth-child(3)")
+    console.log(SecondLang)
+    const newLi=document.createElement('li')
+    newLi.textContent="mojo"
+    SecondLang.replaceWith(newLi)
+    // edit 
+    let firstli=document.querySelector("li:first-child")
+    firstli.outerHTML='<li>TypeScript</li>'
+    // remove 
+    let lastli=document.querySelector("li:last-child")
+    lastli.remove()
+  </script>
+</body>
+</html>
