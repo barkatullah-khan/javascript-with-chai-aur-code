@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+       box-sizing: border-box;
+      margin: 0%;
+      padding: 0%;
+    }
+    .navbar {
+      background-color: rgba(231, 22, 22, 0.555);
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* Center the links */
+      
+    }
+.navbar a {
+     
+      text-align: center;
+      color: black;
+      text-decoration: none;
+    }
+    a{
+      /* padding: 5px; */
+      font-weight: bold;
+      
+    }
+    .btn1{
+      background-color: beige;
+      margin: 10px;
+      padding: 17px;
+      border-radius: 10px;
+      
+    }
+    .btn2{
+      background-color: beige;
+      display: flex;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      align-items: center;
+      
+    }
+.heading{
+text-align: center;
+margin-top: 100px;
+margin-bottom: 10px;
+}
+.box{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.box1{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(99, 71, 226);
+  border: 2px solid black ;
+  margin: 3px;
+}
+.box2{
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  border: 2px solid black ;
+  margin: 3px;
+}
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(245, 229, 12);
+  border: 2px solid black ;
+  margin: 3px;
+}
+.box4{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(42, 165, 104);
+  border: 2px solid black ;
+  margin: 3px;
+}
+    
+.b-heading{
+  /* display: flex; */
+  text-align: center;
+  word-wrap: break-word;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body class="container">
+  
+  <div class="container">
+    <div class="navbar">
+      <a href="#home" class="btn1">Home</a>
+      <a href="#contact" class="btn2">Contact</a>
+    </div>
+    <div class="heading">
+      <h2>Color Scheme Switcher</h2>
+    </div>
+    <div class="box">
+      <div onclick="myfuntion()" class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    </div>
+    <div class="b-heading">
+      <h2>By clickiing one of the above color to change the background-color of this page</h2>
+    </div>
+  </div>
+<script>
+  function changeBackgroundColor(color) {
+      document.querySelector('.container').style.backgroundColor = color;
+    }
+
+    document.querySelector('.box1').addEventListener('click', function() {
+      changeBackgroundColor('rgb(99, 71, 226)');
+    });
+    document.querySelector('.box2').addEventListener('click', function() {
+      changeBackgroundColor('brown');
+    });
+    document.querySelector('.box3').addEventListener('click', function() {
+      changeBackgroundColor('rgb(245, 229, 12)');
+    });
+    document.querySelector('.box4').addEventListener('click', function() {
+      changeBackgroundColor('rgb(42, 165, 104)');
+    });
+</script>
+</body>
+</html>
