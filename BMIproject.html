@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.bmi-calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+   
+    text-align: center;
+}
+
+.bmi-calculator h2 {
+    margin-bottom: 30px;
+    /* color: #333; */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result p {
+    font-size: 18px;
+    color: #333;
+}
+
+   </style>
+</head>
+<body>
+  <div class="bmi-calculator">
+    <h2>BMI Calculator</h2>
+    <div class="form-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter weight">
+    </div>
+    <div class="form-group">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter height">
+    </div>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div class="result">
+        <p id="bmi-result">Result:</p>
+    </div>
+</div>
+
+<script>
+    function calculateBMI() {
+       
+        let weight=document.getElementById("weight").value;
+        let height=document.getElementById("height").value;
+        height=height/100;
+        let bmi=weight/(height*height);
+        let result=bmi.toFixed(2);
+        
+        if (bmi < 18.5) {
+            result = `underweight (${result})`;
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+          result =`Normal weight ${result}`;
+        } else if (bmi >= 25 && bmi < 29.9) {
+          result = `overweight ${result}`;
+        } else {
+          result = `obasity ${result}`;
+        }
+
+        document.querySelector("#bmi-result").innerText = result;
+    }
+</script>
+</body>
+</html>
